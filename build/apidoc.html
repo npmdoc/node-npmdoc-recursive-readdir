@@ -61,12 +61,147 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.recursive-readdir">module recursive-readdir</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.recursive-readdir.recursive-readdir">
+            function <span class="apidocSignatureSpan"></span>recursive-readdir
+            <span class="apidocSignatureSpan">(path, ignores, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.recursive-readdir.toString">
+            function <span class="apidocSignatureSpan">recursive-readdir.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.recursive-readdir.toString">module recursive-readdir.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.recursive-readdir.toString.toString">
+            function <span class="apidocSignatureSpan">recursive-readdir.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.recursive-readdir" id="apidoc.module.recursive-readdir">module recursive-readdir</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.recursive-readdir.recursive-readdir" id="apidoc.element.recursive-readdir.recursive-readdir">
+        function <span class="apidocSignatureSpan"></span>recursive-readdir
+        <span class="apidocSignatureSpan">(path, ignores, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readdir(path, ignores, callback) {
+  if (typeof ignores == &#x27;function&#x27;) {
+    callback = ignores
+    ignores = []
+  }
+  ignores = ignores.map(toMatcherFunction)
+
+  var list = []
+
+  fs.readdir(path, function(err, files) {
+    if (err) {
+      return callback(err)
+    }
+
+    var pending = files.length
+    if (!pending) {
+      // we are done, woop woop
+      return callback(null, list)
+    }
+
+    files.forEach(function(file) {
+      var filePath = p.join(path, file)
+      fs.stat(filePath, function(_err, stats) {
+        if (_err) {
+          return callback(_err)
+        }
+
+        if (ignores.some(function(matcher) { return matcher(filePath, stats) })) {
+          pending -= 1
+          if (!pending) {
+            return callback(null, list)
+          }
+          return null
+        }
+
+        if (stats.isDirectory()) {
+          readdir(filePath, ignores, function(__err, res) {
+            if (__err) {
+              return callback(__err)
+            }
+
+            list = list.concat(res)
+            pending -= 1
+            if (!pending) {
+              return callback(null, list)
+            }
+          })
+        } else {
+          list.push(filePath)
+          pending -= 1
+          if (!pending) {
+            return callback(null, list)
+          }
+        }
+
+      })
+    })
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.recursive-readdir.toString" id="apidoc.element.recursive-readdir.toString">
+        function <span class="apidocSignatureSpan">recursive-readdir.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.recursive-readdir.toString" id="apidoc.module.recursive-readdir.toString">module recursive-readdir.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.recursive-readdir.toString.toString" id="apidoc.element.recursive-readdir.toString.toString">
+        function <span class="apidocSignatureSpan">recursive-readdir.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
