@@ -1,9 +1,11 @@
 # api documentation for  [recursive-readdir (v2.1.1)](https://github.com/jergason/recursive-readdir#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-recursive-readdir.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-recursive-readdir) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-recursive-readdir.svg)](https://travis-ci.org/npmdoc/node-npmdoc-recursive-readdir)
 #### Get an array of all files in a directory and subdirectories.
 
-[![NPM](https://nodei.co/npm/recursive-readdir.png?downloads=true)](https://www.npmjs.com/package/recursive-readdir)
+[![NPM](https://nodei.co/npm/recursive-readdir.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/recursive-readdir)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-recursive-readdir/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-recursive-readdir_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-recursive-readdir/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-recursive-readdir/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-recursive-readdir/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-recursive-readdir/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-recursive-readdir/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-recursive-readdir/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +20,6 @@
 {
     "author": {
         "name": "Jamison Dance",
-        "email": "jergason@gmail.com",
         "url": "http://jamisondance.com/"
     },
     "bugs": {
@@ -49,13 +50,11 @@
     "main": "./index.js",
     "maintainers": [
         {
-            "name": "jergason",
-            "email": "jergason@gmail.com"
+            "name": "jergason"
         }
     ],
     "name": "recursive-readdir",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/jergason/recursive-readdir.git"
@@ -66,16 +65,6 @@
     "version": "2.1.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module recursive-readdir](#apidoc.module.recursive-readdir)
-
-
-
-# <a name="apidoc.module.recursive-readdir"></a>[module recursive-readdir](#apidoc.module.recursive-readdir)
 
 
 
