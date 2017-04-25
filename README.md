@@ -1,4 +1,7 @@
-# api documentation for  [recursive-readdir (v2.1.1)](https://github.com/jergason/recursive-readdir#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-recursive-readdir.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-recursive-readdir) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-recursive-readdir.svg)](https://travis-ci.org/npmdoc/node-npmdoc-recursive-readdir)
+# npmdoc-recursive-readdir
+
+#### basic api documentation for  [recursive-readdir (v2.1.1)](https://github.com/jergason/recursive-readdir#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-recursive-readdir.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-recursive-readdir) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-recursive-readdir.svg)](https://travis-ci.org/npmdoc/node-npmdoc-recursive-readdir)
+
 #### Get an array of all files in a directory and subdirectories.
 
 [![NPM](https://nodei.co/npm/recursive-readdir.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/recursive-readdir)
@@ -62,7 +65,8 @@
     "scripts": {
         "test": "mocha test/"
     },
-    "version": "2.1.1"
+    "version": "2.1.1",
+    "bin": {}
 }
 ```
 
